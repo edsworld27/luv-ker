@@ -1,9 +1,11 @@
+import Link from "next/link";
+
 export default function Problem() {
   const issues = [
     {
       icon: "⚗️",
-      title: "Phthalates in Fragrance",
-      body: "Phthalates are added to fragrances as fixatives — they stop scent compounds breaking down in light, so the smell lasts longer on the shelf and on your skin. They also mimic oestrogen, disrupting hormonal balance with every wash.",
+      title: "Endocrine Disruptors",
+      body: "Parabens, phthalates, and synthetic fragrances mimic oestrogen in the body — quietly disrupting hormonal balance with every wash.",
     },
     {
       icon: "🧪",
@@ -71,6 +73,20 @@ export default function Problem() {
               Environmental Working Group (EWG)
             </p>
           </div>
+        </div>
+
+        {/* Find out more CTA */}
+        <div className="flex flex-col items-center text-center mt-12 sm:mt-14 lg:mt-16">
+          <p className="text-brand-cream/55 text-sm sm:text-base max-w-xl mb-5 leading-relaxed">
+            We dig into the research behind phthalates, parabens, and the &ldquo;fragrance&rdquo; loophole — with sources you can read for yourself.
+          </p>
+          <Link
+            href="/the-problem"
+            className="group inline-flex items-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-brand-orange hover:bg-brand-orange-light transition-all duration-300 text-sm sm:text-base font-semibold text-white shadow-lg shadow-brand-orange/15 hover:-translate-y-0.5"
+          >
+            Find out more
+            <span className="transition-transform group-hover:translate-x-1">→</span>
+          </Link>
         </div>
 
       </div>
