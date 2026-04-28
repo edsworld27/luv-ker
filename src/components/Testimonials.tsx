@@ -249,21 +249,35 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Skyline collage — desktop only (overlapping, varied heights) */}
+        {/* Skyline collage — desktop only (3 overlapping rows for density) */}
         <div className="hidden lg:block relative mb-20">
-          <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-          <div className="flex items-end justify-center gap-0 px-4">
-            {SKYLINE.map((s, i) => (
-              <div
-                key={i}
-                className={`relative ${s.width} ${s.height} ${s.rotate} ${s.offsetY} ${s.z}
-                  ${i === 0 ? "" : "-ml-6 xl:-ml-8"}
-                  transition-all duration-500 hover:rotate-0 hover:-translate-y-2 hover:z-50`}
-              >
-                <Tile tile={s.tile} />
-              </div>
-            ))}
+          {/* Top row */}
+          <SkylineRow
+            tiles={SKYLINE}
+            shift="translate-x-0"
+            opacity="opacity-100"
+            zBase={20}
+          />
+          {/* Second row — overlaps the first, shifted right, mirrored rotations */}
+          <SkylineRow
+            tiles={SKYLINE.slice(3).concat(SKYLINE.slice(0, 3)).map((s) => ({ ...s, rotate: flipRotate(s.rotate) }))}
+            shift="translate-x-6 xl:translate-x-10"
+            opacity="opacity-95"
+            zBase={10}
+            mt="-mt-44 xl:-mt-52"
+          />
+          {/* Third row — fades to suggest endless social proof */}
+          <div className="relative -mt-44 xl:-mt-52" style={{ maskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)" }}>
+            <SkylineRow
+              tiles={SKYLINE.slice(5).concat(SKYLINE.slice(0, 5))}
+              shift="-translate-x-6 xl:-translate-x-10"
+              opacity="opacity-70"
+              zBase={1}
+            />
           </div>
+          <p className="text-center text-[11px] tracking-widest uppercase text-brand-cream/35 mt-3">
+            …and 60+ more rolling in this week
+          </p>
         </div>
 
         {/* Mobile/tablet — horizontal scroll collage */}
@@ -324,6 +338,42 @@ export default function Testimonials() {
 
       </div>
     </section>
+  );
+}
+
+function flipRotate(r: string): string {
+  if (r.startsWith("-rotate-")) return r.replace("-rotate-", "rotate-");
+  if (r.startsWith("rotate-")) return r.replace("rotate-", "-rotate-");
+  return r;
+}
+
+function SkylineRow({
+  tiles,
+  shift,
+  opacity,
+  zBase,
+  mt = "",
+}: {
+  tiles: typeof SKYLINE;
+  shift: string;
+  opacity: string;
+  zBase: number;
+  mt?: string;
+}) {
+  return (
+    <div className={`flex items-end justify-center gap-0 px-4 ${shift} ${opacity} ${mt}`}>
+      {tiles.map((s, i) => (
+        <div
+          key={i}
+          style={{ zIndex: zBase + (tiles.length - Math.abs(i - tiles.length / 2)) }}
+          className={`relative ${s.width} ${s.height} ${s.rotate} ${s.offsetY}
+            ${i === 0 ? "" : "-ml-6 xl:-ml-8"}
+            transition-all duration-500 hover:rotate-0 hover:-translate-y-2 hover:!z-50`}
+        >
+          <Tile tile={s.tile} />
+        </div>
+      ))}
+    </div>
   );
 }
 
