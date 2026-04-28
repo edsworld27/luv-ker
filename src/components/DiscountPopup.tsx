@@ -38,7 +38,9 @@ export default function DiscountPopup() {
           {/* Close button */}
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute top-5 right-5 text-brand-cream/40 hover:text-brand-cream transition-colors z-10"
+            aria-label="Close"
+            type="button"
+            className="absolute top-4 right-4 z-30 w-9 h-9 rounded-full bg-black/40 hover:bg-black/70 backdrop-blur-sm flex items-center justify-center text-brand-cream/70 hover:text-brand-cream transition-colors"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M18 6L6 18M6 6l12 12" />

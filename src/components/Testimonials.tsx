@@ -194,6 +194,20 @@ const REVIEWS = [
     location: "Edinburgh, UK",
     stars: 5,
   },
+  {
+    quote:
+      "Bought this for myself after my partner kept stealing hers. I had no idea what I'd been missing — my skin actually feels different. Razor burn is gone. I'm a convert.",
+    name: "James O.",
+    location: "Leeds, UK",
+    stars: 5,
+  },
+  {
+    quote:
+      "Got the gift set for my dad's birthday — he's not the type to comment on skincare. Two weeks later he asked me to order him another one. That tells you everything.",
+    name: "Kofi B.",
+    location: "London, UK",
+    stars: 5,
+  },
 ];
 
 export default function Testimonials() {
@@ -210,10 +224,11 @@ export default function Testimonials() {
           </div>
           <h2 className="font-display font-bold text-brand-cream leading-tight mb-5
             text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl">
-            What women are <span className="gradient-text">actually saying</span>
+            What people are <span className="gradient-text">actually saying</span>
           </h2>
           <p className="text-brand-cream/60 text-base sm:text-lg xl:text-xl leading-relaxed max-w-2xl">
-            Real DMs. Real reposts. Real women. We don&apos;t pay for testimonials and we don&apos;t curate them.
+            Real DMs. Real reposts. Real customers — men and women, mothers and fathers, dermatologists and daughters.
+            We don&apos;t pay for testimonials and we don&apos;t curate them.
           </p>
         </div>
 

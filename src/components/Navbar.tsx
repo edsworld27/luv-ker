@@ -62,6 +62,16 @@ export default function Navbar() {
 
           {/* Right actions */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Account / Login */}
+            <Link
+              href="/account"
+              aria-label="Account"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 text-xs sm:text-sm tracking-wide text-brand-cream/70 hover:text-brand-cream transition-colors"
+            >
+              <AccountIcon />
+              <span className="hidden lg:inline">Log in</span>
+            </Link>
+
             {/* Cart */}
             <button
               onClick={openCart}
@@ -104,10 +114,26 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            <Link
+              href="/account"
+              onClick={() => setMenuOpen(false)}
+              className="text-brand-cream/70 hover:text-brand-cream text-sm tracking-wide py-1 flex items-center gap-2"
+            >
+              <AccountIcon /> Log in
+            </Link>
           </div>
         )}
       </nav>
     </>
+  );
+}
+
+function AccountIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
   );
 }
 
