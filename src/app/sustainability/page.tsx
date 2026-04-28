@@ -95,8 +95,8 @@ export default function Page() {
               </div>
               <div className="relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-square rounded-3xl overflow-hidden border border-white/5">
                 <Image
-                  src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1600&q=75"
-                  alt="Woman with natural skincare look in warm light"
+                  src="https://images.unsplash.com/photo-1648328414427-fc902f51808c?auto=format&fit=crop&w=1600&q=75"
+                  alt="Ghanaian woman and man in traditional clothing smiling in warm sunset light"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
