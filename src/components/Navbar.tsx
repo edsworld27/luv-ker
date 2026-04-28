@@ -8,6 +8,7 @@ import CartDrawer from "./CartDrawer";
 const NAV_LINKS = [
   { label: "Story", href: "/our-story" },
   { label: "Why Odo", href: "/the-problem" },
+  { label: "Testing", href: "/lab-tests" },
   { label: "Shop", href: "/#shop" },
   { label: "Heritage", href: "/#heritage" },
   { label: "FAQ", href: "/faq" },

@@ -24,7 +24,7 @@ export default function Page() {
       <h2 className="font-display text-2xl text-brand-cream">Returns</h2>
       <p>
         We offer a 30-day return window on unopened, unused products. To start a return, email
-        {" "}<a href="mailto:hello@luvandker.com" className="text-brand-orange hover:underline">hello@luvandker.com</a>{" "}
+        {" "}<a href="mailto:felicia@luvandker.com" className="text-brand-orange hover:underline">felicia@luvandker.com</a>{" "}
         with your order number. Once we receive the parcel, we will refund your original payment method within 5 working days.
       </p>
       <h2 className="font-display text-2xl text-brand-cream">Damaged or missing items</h2>

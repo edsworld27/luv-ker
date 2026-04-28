@@ -233,11 +233,10 @@ export default function Testimonials() {
         </div>
 
         {/* Trust strip */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-2xl bg-white/5 mb-14 sm:mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-px overflow-hidden rounded-2xl bg-white/5 mb-14 sm:mb-16">
           {[
             { big: "4.9", small: "Average rating" },
             { big: "3,400+", small: "Happy customers" },
-            { big: "91%", small: "Buy again within 90 days" },
             { big: "0", small: "Synthetic ingredients · ever" },
           ].map((s) => (
             <div key={s.small} className="bg-brand-black-card px-5 py-6 sm:py-7 flex flex-col items-center text-center">
@@ -296,13 +295,39 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Verified review cards — two auto-scrolling rows in opposite directions */}
-        <div className="flex flex-col items-center text-center mb-8 sm:mb-10">
-          <span className="text-xs tracking-[0.28em] uppercase text-brand-amber mb-3">Verified reviews</span>
-          <h3 className="font-display font-bold text-brand-cream text-2xl sm:text-3xl xl:text-4xl">
-            Felt by those who know
-          </h3>
-          <p className="text-[11px] tracking-widest uppercase text-brand-cream/30 mt-3">Hover any card to pause</p>
+        <div className="flex flex-col items-center text-center mb-12 sm:mb-14">
+          <p className="font-display text-brand-cream text-2xl sm:text-3xl xl:text-4xl mb-4">
+            Follow the journey and tag us
+          </p>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <a
+              href="https://instagram.com/luvandker"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="w-11 h-11 rounded-full border border-white/15 hover:border-brand-orange/60 bg-brand-black-card hover:bg-brand-black transition-colors text-brand-cream/80 hover:text-brand-cream flex items-center justify-center text-xs font-semibold"
+            >
+              IG
+            </a>
+            <a
+              href="https://tiktok.com/@luvandker"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="w-11 h-11 rounded-full border border-white/15 hover:border-brand-orange/60 bg-brand-black-card hover:bg-brand-black transition-colors text-brand-cream/80 hover:text-brand-cream flex items-center justify-center text-xs font-semibold"
+            >
+              TT
+            </a>
+            <a
+              href="https://x.com/luvandker"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X"
+              className="w-11 h-11 rounded-full border border-white/15 hover:border-brand-orange/60 bg-brand-black-card hover:bg-brand-black transition-colors text-brand-cream/80 hover:text-brand-cream flex items-center justify-center text-xs font-semibold"
+            >
+              X
+            </a>
+          </div>
         </div>
 
         {/* Break out of the max-width container so the marquee runs the full viewport width */}

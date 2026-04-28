@@ -63,7 +63,7 @@ const FAQ_GROUPS: { heading: string; items: { q: string; a: string }[] }[] = [
       },
       {
         q: "Can I change or cancel my order after placing it?",
-        a: "Yes, if it has not yet shipped. Email hello@luvandker.com within two hours of placing the order and we will update or cancel it.",
+        a: "Yes, if it has not yet shipped. Email felicia@luvandker.com within two hours of placing the order and we will update or cancel it.",
       },
       {
         q: "Do you ship internationally?",
@@ -75,7 +75,7 @@ const FAQ_GROUPS: { heading: string; items: { q: string; a: string }[] }[] = [
       },
       {
         q: "What happens if my order arrives damaged?",
-        a: "Email hello@luvandker.com within 7 days of delivery with a photo of the damage and we will replace the item free of charge — no return required.",
+        a: "Email felicia@luvandker.com within 7 days of delivery with a photo of the damage and we will replace the item free of charge — no return required.",
       },
       {
         q: "Do you offer subscription or auto-replenish?",
@@ -88,7 +88,7 @@ const FAQ_GROUPS: { heading: string; items: { q: string; a: string }[] }[] = [
     items: [
       {
         q: "What is your returns policy?",
-        a: "We offer 30-day returns on unopened, unused products. Email hello@luvandker.com with your order number to start a return.",
+        a: "We offer 30-day returns on unopened, unused products. Email felicia@luvandker.com with your order number to start a return.",
       },
       {
         q: "How do I get a refund?",
@@ -219,7 +219,7 @@ export default function Page() {
           <p className="text-brand-cream/70 mb-3">Still have a question?</p>
           <p className="text-sm text-brand-cream/55 mb-5">
             Chat with our assistant in the corner of any page, or email{" "}
-            <a href="mailto:hello@luvandker.com" className="text-brand-orange hover:underline">hello@luvandker.com</a>.
+            <a href="mailto:felicia@luvandker.com" className="text-brand-orange hover:underline">felicia@luvandker.com</a>.
           </p>
         </div>
       </InfoPage>

@@ -125,18 +125,18 @@ export default function Page() {
               <span className="text-xs tracking-[0.28em] uppercase text-brand-orange">The Problem</span>
             </div>
             <h1 className="font-display font-bold text-brand-cream leading-[1.05] mb-6 text-4xl sm:text-5xl md:text-6xl xl:text-7xl">
-              They told us beauty was <span className="italic gradient-text">pain.</span>
+              What if your daily routine is the part
               <br />
-              <span className="text-brand-cream/85 text-3xl sm:text-4xl md:text-5xl xl:text-6xl">They lied.</span>
+              <span className="text-brand-cream/85 text-3xl sm:text-4xl md:text-5xl xl:text-6xl">quietly working against your skin?</span>
             </h1>
             <div className="space-y-5 text-brand-cream/70 text-base sm:text-lg xl:text-xl leading-[1.8] mb-8">
               <p>
-                For centuries women have been sold the same story — that to be radiant, you must suffer.
-                That to be soft, you must burn. That to glow, you must absorb a hundred chemicals you cannot pronounce.
+                Most of us use soaps, washes, and skincare every day without seeing the full ingredient story. Labels often look simple,
+                but hidden fragrance blends and synthetic additives can add up over time.
               </p>
               <p>
-                But our grandmothers&apos; grandmothers had skin like the morning sun. They walked through the heat of Ghana
-                with shea butter on their hands and black soap by the river. No parabens. No phthalates. No promises in plastic bottles.
+                This is not about fear, and it is not about men versus women. It is about clarity for everyone: understanding what goes
+                on your skin, what gets absorbed, and what a cleaner alternative can look like.
               </p>
               <p className="text-brand-cream/85">
                 What follows is an honest, source-cited look at the ingredients we built Odo without — and the research that explains why.
@@ -246,10 +246,10 @@ export default function Page() {
         <section className="w-full bg-brand-black-soft border-t border-white/5">
           <div className="w-full max-w-4xl mx-auto px-6 sm:px-10 lg:px-12 py-14 sm:py-20 text-center">
             <p className="font-display italic text-brand-cream text-xl sm:text-2xl xl:text-3xl leading-relaxed max-w-2xl mx-auto mb-3">
-              Beauty was never the wound.
+              Your skin routine should support your skin, not compete with it.
             </p>
             <p className="font-display text-2xl sm:text-3xl xl:text-4xl font-bold mb-10">
-              <span className="gradient-text">It was always the inheritance.</span>
+              <span className="gradient-text">Choose products that are clear, simple, and made for everyone.</span>
             </p>
             <h2 className="font-display font-bold text-brand-cream text-2xl sm:text-3xl xl:text-4xl mb-4">
               Built without any of it

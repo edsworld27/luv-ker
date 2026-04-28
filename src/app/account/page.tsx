@@ -22,7 +22,7 @@ export default function AccountPage() {
     setTimeout(() => {
       setMessage(
         mode === "signin"
-          ? "Customer accounts launch with our Shopify checkout integration. For now, please reach out to hello@luvandker.com if you need help with an order."
+          ? "Customer accounts launch with our Shopify checkout integration. For now, please reach out to felicia@luvandker.com if you need help with an order."
           : "Thanks — accounts go live with our Shopify integration. We'll email you when sign-up opens. Until then you can checkout as a guest with no friction.",
       );
       setBusy(false);

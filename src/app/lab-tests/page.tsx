@@ -279,7 +279,7 @@ export default function Page() {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <a
-                href="mailto:lab@luvandker.com"
+                href="mailto:felicia@luvandker.com"
                 className="px-7 py-3.5 rounded-full bg-brand-orange hover:bg-brand-orange-light text-white text-sm font-semibold transition-colors"
               >
                 Email our lab team

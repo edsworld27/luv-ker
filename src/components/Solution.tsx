@@ -1,12 +1,25 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { INGREDIENTS, type IngredientDetail } from "@/lib/ingredients";
+
 export default function Solution() {
-  const ingredients = [
-    { name: "Shea Butter",     origin: "Northern Ghana",  benefit: "Deep moisture & skin barrier repair" },
-    { name: "Black Soap Base", origin: "Kumasi, Ashanti", benefit: "Gentle cleanse, antimicrobial properties" },
-    { name: "Cocoa Pod Ash",   origin: "Eastern Region",  benefit: "Natural exfoliant, balances skin pH" },
-    { name: "Palm Kernel Oil", origin: "Western Ghana",   benefit: "Rich in antioxidants, protects skin" },
-    { name: "Plantain Skin",   origin: "Brong-Ahafo",     benefit: "Vitamins A, E & K for skin health" },
-    { name: "Coconut Oil",     origin: "Volta Region",    benefit: "Anti-inflammatory, promotes healing" },
-  ];
+  const [active, setActive] = useState<IngredientDetail | null>(null);
+
+  useEffect(() => {
+    if (!active) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActive(null);
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [active]);
 
   return (
     <section id="heritage" className="w-full py-20 sm:py-24 lg:py-32 2xl:py-40 bg-brand-black-soft relative overflow-hidden">
@@ -61,25 +74,126 @@ export default function Solution() {
           <p className="text-brand-cream/40 text-sm sm:text-base max-w-lg mx-auto">
             We don&apos;t hide behind &ldquo;fragrance&rdquo;. We celebrate every element.
           </p>
+          <Link
+            href="/ingredients"
+            className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-brand-orange/40 text-brand-orange hover:bg-brand-orange hover:text-white transition-colors text-xs tracking-[0.2em] uppercase font-semibold"
+          >
+            View All Ingredients
+          </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 xl:gap-6">
-          {ingredients.map(({ name, origin, benefit }) => (
-            <div key={name} className="flex flex-col items-center text-center p-6 sm:p-7 xl:p-8 rounded-xl bg-brand-black-card border border-white/5 hover:border-brand-amber/25 transition-all duration-300 group">
+          {INGREDIENTS.slice(0, 6).map((ing) => (
+            <div key={ing.slug} className="flex flex-col items-center text-center p-6 sm:p-7 xl:p-8 rounded-xl bg-brand-black-card border border-white/5 hover:border-brand-amber/25 transition-all duration-300 group">
               <div className="flex items-center justify-between w-full gap-3 mb-3">
                 <h4 className="font-display text-base sm:text-lg font-semibold text-brand-cream group-hover:text-brand-amber transition-colors">
-                  {name}
+                  {ing.name}
                 </h4>
                 <span className="shrink-0 text-[10px] tracking-wide text-brand-cream/30 bg-white/5 px-2.5 py-1 rounded-full whitespace-nowrap">
-                  {origin}
+                  {ing.origin}
                 </span>
               </div>
-              <p className="text-sm xl:text-base text-brand-cream/50 leading-relaxed w-full">{benefit}</p>
+              <p className="text-sm xl:text-base text-brand-cream/50 leading-relaxed w-full">{ing.oneLiner}</p>
+              <button
+                onClick={() => setActive(ing)}
+                aria-label={`Open ${ing.name} details`}
+                className="mt-4 w-9 h-9 rounded-full border border-brand-orange/35 text-brand-orange hover:bg-brand-orange hover:text-white transition-colors flex items-center justify-center"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="M21 21l-4.35-4.35" />
+                </svg>
+              </button>
             </div>
           ))}
         </div>
 
       </div>
+      {active && <IngredientModal ingredient={active} onClose={() => setActive(null)} />}
     </section>
+  );
+}
+
+function IngredientModal({
+  ingredient,
+  onClose,
+}: {
+  ingredient: IngredientDetail;
+  onClose: () => void;
+}) {
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={ingredient.name}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+    >
+      <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" onClick={onClose} />
+      <div className="relative z-10 w-full max-w-3xl max-h-[90vh] bg-brand-black-soft border border-white/10 rounded-3xl shadow-2xl flex flex-col overflow-hidden">
+        <div className="relative aspect-[16/9] sm:aspect-[2/1] shrink-0">
+          <Image
+            src={ingredient.image}
+            alt={ingredient.imageAlt}
+            fill
+            sizes="(min-width: 1024px) 768px, 100vw"
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-black-soft via-brand-black-soft/40 to-transparent" />
+          <button
+            onClick={onClose}
+            aria-label="Close"
+            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 backdrop-blur-sm hover:bg-black/70 text-white flex items-center justify-center transition-colors"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+          <div className="absolute bottom-5 left-5 right-5 sm:left-7 sm:right-7">
+            <p className="text-[10px] tracking-[0.28em] uppercase text-brand-amber mb-2">{ingredient.origin}</p>
+            <h2 className="font-display font-bold text-brand-cream text-2xl sm:text-3xl xl:text-4xl leading-tight">
+              {ingredient.name}
+            </h2>
+          </div>
+        </div>
+
+        <div className="flex-1 overflow-y-auto px-5 sm:px-7 py-6 sm:py-7 space-y-6">
+          <p className="text-brand-cream/80 text-base sm:text-lg italic leading-relaxed">{ingredient.oneLiner}</p>
+          <div>
+            <p className="text-[10px] tracking-[0.28em] uppercase text-brand-orange mb-3">Why we use it</p>
+            <ul className="space-y-2.5">
+              {ingredient.benefits.map((b) => (
+                <li key={b} className="flex items-start gap-3 text-sm sm:text-base text-brand-cream/75 leading-relaxed">
+                  <span className="text-brand-amber shrink-0 mt-0.5">✦</span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-[10px] tracking-[0.28em] uppercase text-brand-purple-light mb-2">Where it&apos;s from</p>
+            <p className="font-display text-brand-cream font-medium mb-2">{ingredient.partner}</p>
+            <p className="text-sm sm:text-base text-brand-cream/65 leading-relaxed">{ingredient.sourcing}</p>
+          </div>
+          <div>
+            <p className="text-[10px] tracking-[0.28em] uppercase text-brand-purple-light mb-2">How it&apos;s processed</p>
+            <p className="text-sm sm:text-base text-brand-cream/65 leading-relaxed">{ingredient.processing}</p>
+          </div>
+          <div className="pt-2">
+            <p className="text-[10px] tracking-[0.28em] uppercase text-brand-cream/40 mb-3">Found in</p>
+            <div className="flex flex-wrap gap-2">
+              {ingredient.usedIn.map((p) => (
+                <span
+                  key={p}
+                  className="px-3 py-1.5 text-xs rounded-full border border-brand-orange/25 bg-brand-orange/5 text-brand-orange"
+                >
+                  {p}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

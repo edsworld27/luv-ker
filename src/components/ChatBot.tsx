@@ -79,7 +79,7 @@ function botReply(input: string): string {
     return "Paste your gift card code (ODO-XXXX-XXXX-XXXX) and I'll look up the balance, or visit /redeem for the full lookup.";
   }
   if (/return|refund/i.test(q)) {
-    return "We offer 30-day returns on unopened products. Email hello@luvandker.com with your order number to start a return — refund lands within 5 working days of us receiving it.";
+    return "We offer 30-day returns on unopened products. Email felicia@luvandker.com with your order number to start a return — refund lands within 5 working days of us receiving it.";
   }
   if (/shipping|delivery|how long/i.test(q)) {
     return "UK standard shipping: £4.99 (2–4 working days), free over £30. Express: £7.90 next-day if ordered before 2pm. EU/US/CA also available.";
@@ -97,7 +97,7 @@ function botReply(input: string): string {
     return "Sign up to the newsletter at the bottom of any page for a first-order discount. We don't run flash sales — our prices stay honest.";
   }
   if (/contact|human|email|speak to someone/i.test(q)) {
-    return "Email hello@luvandker.com — we reply within 24 hours, Mon–Fri. For press, press@luvandker.com.";
+    return "Email felicia@luvandker.com — we reply within 24 hours, Mon–Fri. For press, felicia@luvandker.com.";
   }
   if (/hi$|hello|hey|hiya|good (morning|afternoon|evening)/i.test(q)) {
     return "Hello! I can help with order tracking, gift card balances, returns, ingredients and shipping. What can I help with?";
@@ -106,7 +106,7 @@ function botReply(input: string): string {
     return "Anytime ✦";
   }
 
-  return "I can help with order tracking ('track 1024'), gift card balances, returns, shipping, ingredients and sensitive-skin questions. For anything else, email hello@luvandker.com.";
+  return "I can help with order tracking ('track 1024'), gift card balances, returns, shipping, ingredients and sensitive-skin questions. For anything else, email felicia@luvandker.com.";
 }
 
 const QUICK_PROMPTS = [

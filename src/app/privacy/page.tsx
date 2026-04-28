@@ -18,7 +18,7 @@ export default function Page() {
       <h2 className="font-display text-2xl text-brand-cream">Your rights</h2>
       <p>
         Under UK GDPR you have the right to access, correct, or delete the personal data we hold about you. Email
-        {" "}<a href="mailto:privacy@luvandker.com" className="text-brand-orange hover:underline">privacy@luvandker.com</a>{" "}
+        {" "}<a href="mailto:felicia@luvandker.com" className="text-brand-orange hover:underline">felicia@luvandker.com</a>{" "}
         and we will respond within 30 days.
       </p>
       <h2 className="font-display text-2xl text-brand-cream">Cookies</h2>
