@@ -64,13 +64,22 @@ export default function Problem() {
           <p className="text-brand-cream/55 text-sm sm:text-base max-w-xl mb-5 leading-relaxed">
             We dig into the research behind phthalates, parabens, and the &ldquo;fragrance&rdquo; loophole — with sources you can read for yourself.
           </p>
-          <Link
-            href="/the-problem"
-            className="group inline-flex items-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-brand-orange hover:bg-brand-orange-light transition-all duration-300 text-sm sm:text-base font-semibold text-white shadow-lg shadow-brand-orange/15 hover:-translate-y-0.5"
-          >
-            Find out more
-            <span className="transition-transform group-hover:translate-x-1">→</span>
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <Link
+              href="/the-problem"
+              className="group inline-flex items-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-brand-orange hover:bg-brand-orange-light transition-all duration-300 text-sm sm:text-base font-semibold text-white shadow-lg shadow-brand-orange/15 hover:-translate-y-0.5"
+            >
+              Find out more
+              <span className="transition-transform group-hover:translate-x-1">→</span>
+            </Link>
+            <Link
+              href="/lab-tests"
+              className="group inline-flex items-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full border border-white/15 hover:border-brand-amber/50 transition-all duration-300 text-sm sm:text-base font-semibold text-brand-cream/85 hover:text-brand-cream"
+            >
+              View our lab tests
+              <span className="text-brand-amber transition-transform group-hover:translate-x-1">↗</span>
+            </Link>
+          </div>
         </div>
 
       </div>

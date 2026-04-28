@@ -12,6 +12,7 @@ const COMPANY_LINKS = [
   { label: "Our Story", href: "/our-story" },
   { label: "Ingredients", href: "/ingredients" },
   { label: "Sustainability", href: "/sustainability" },
+  { label: "Lab Testing", href: "/lab-tests" },
   { label: "Contact", href: "/contact" },
 ];
 
