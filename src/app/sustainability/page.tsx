@@ -13,26 +13,26 @@ const PILLARS = [
   {
     title: "Sourced direct",
     body: "Every ingredient is bought direct from the women and farmers who grow it. Named co-operatives. Above-market rates. No middlemen taking a cut.",
-    img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1400&q=75",
-    alt: "Woman in a natural outdoor market setting",
+    img: "https://images.unsplash.com/photo-1622971592071-95f272bb6ca2?auto=format&fit=crop&w=1400&q=75",
+    alt: "Workers at a shea butter factory in Ghana",
   },
   {
     title: "Made by hand",
     body: "Every Odo bar is hand-cut and cold-processed in Accra. We never outsource production. The women who make Odo are paid a living wage and own equity in the company.",
-    img: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&fit=crop&w=1400&q=75",
-    alt: "Handcrafted soap bars laid out to cure",
+    img: "https://images.unsplash.com/photo-1685052387112-2016a9df8be4?auto=format&fit=crop&w=1400&q=75",
+    alt: "Handmade natural soap bar close-up",
   },
   {
     title: "Compostable packaging",
     body: "Bars ship in 100% compostable paper. Glass dispensers refill with sachets. No single-use plastic. No microplastics. Nothing in our supply chain ends up in the ocean.",
-    img: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1400&q=75",
-    alt: "Recyclable kraft paper packaging on a neutral surface",
+    img: "https://images.unsplash.com/photo-1464716821973-e1031cfa43dc?auto=format&fit=crop&w=1400&q=75",
+    alt: "Minimal soap packaging on kraft paper",
   },
   {
     title: "Carbon-aware shipping",
     body: "We consolidate shipments from Accra to the UK by sea where possible, and offset every air-freighted order through verified reforestation projects in northern Ghana.",
-    img: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1400&q=75",
-    alt: "Container ship moving through open water",
+    img: "https://images.unsplash.com/photo-1623486175858-81e03b95b677?auto=format&fit=crop&w=1400&q=75",
+    alt: "Large container cargo ship at sea",
   },
 ];
 
@@ -41,19 +41,19 @@ const CO_OPS = [
     region: "Northern Ghana",
     name: "Bolgatanga Women's Shea Co-operative",
     detail: "47 women press raw shea butter from karité nuts hand-collected during the rainy season. We are their largest UK buyer.",
-    img: "https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=1200&q=75",
+    img: "https://images.unsplash.com/photo-1622971592071-95f272bb6ca2?auto=format&fit=crop&w=1200&q=75",
   },
   {
     region: "Eastern Region",
     name: "Suhum Cocoa Pod Collective",
     detail: "A men-and-women collective of 23 farmers using cocoa pods that were previously discarded as waste — turning them into the ash that powers Odo Radiance.",
-    img: "https://images.unsplash.com/photo-1471943038886-87c772c31367?auto=format&fit=crop&w=1200&q=75",
+    img: "https://images.unsplash.com/photo-1757332914733-212a7af33f0d?auto=format&fit=crop&w=1200&q=75",
   },
   {
     region: "Volta Region",
     name: "Keta Coast Coconut Farmers",
     detail: "Smallholder farmers along the Volta coastline pressing virgin coconut oil traditionally — using the wet-mill method that retains more antioxidants.",
-    img: "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=1200&q=75",
+    img: "https://images.unsplash.com/photo-1763050233735-b6c7003250b3?auto=format&fit=crop&w=1200&q=75",
   },
 ];
 
